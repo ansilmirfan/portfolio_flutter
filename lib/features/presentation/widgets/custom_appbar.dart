@@ -45,7 +45,7 @@ class AppBarItems extends StatelessWidget {
       valueListenable: SelectedNav.selectedNav,
       builder:
           (context, value, child) => Row(
-            spacing: 50,
+            spacing: ScreenUtils.width(context).multiply(0.02),
             children: [
               ...List.generate(
                 navItems.length,
