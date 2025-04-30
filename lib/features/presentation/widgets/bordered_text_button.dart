@@ -34,7 +34,7 @@ class BorderedTextButton extends StatelessWidget {
           ),
         ),
       ),
-      onPressed: () {},
+      onPressed: onTap,
       //if the dark is true then the text will be in grey with lesser weight otherwise white color whith more fontweight
       child: Text(
         text,
