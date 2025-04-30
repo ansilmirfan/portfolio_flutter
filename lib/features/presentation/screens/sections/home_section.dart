@@ -3,6 +3,7 @@ import 'package:portfolio/core/utils/extension/extensions.dart';
 import 'package:portfolio/core/utils/screen_utils.dart';
 import 'package:portfolio/features/presentation/screens/sections/widgets/home_intro_contents.dart';
 import 'package:portfolio/features/presentation/screens/sections/widgets/profile_image_panel.dart';
+import 'package:portfolio/features/presentation/widgets/bordered_container.dart';
 import 'package:portfolio/features/presentation/widgets/bordered_text_button.dart';
 
 import 'package:portfolio/features/presentation/widgets/group_icons.dart';
@@ -36,7 +37,18 @@ class HomeSection extends StatelessWidget {
             if (!isMobile) _groupIcon(),
           ],
         ),
-        BorderedTextButton(onTap: () {}, text: "  Download CV ↓"),
+        Row(
+          children: [
+            Spacer(),
+            //cv download button
+            BorderedTextButton(onTap: () {}, text: "  Download CV ↓"),
+            Spacer(),
+            Transform.translate(
+              offset: Offset(20.5, 1),
+              child: BorderedContainer(height: 50, width: 50),
+            ),
+          ],
+        ),
       ],
     );
   }
