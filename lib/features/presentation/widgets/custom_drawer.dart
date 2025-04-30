@@ -1,10 +1,11 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:portfolio/core/utils/extension/extensions.dart';
 import 'package:portfolio/features/presentation/value_listenable/selected_nav.dart';
 import 'package:portfolio/features/presentation/widgets/gap.dart';
+import 'package:portfolio/features/presentation/widgets/group_icons.dart';
 import 'package:portfolio/features/presentation/widgets/text/hash_text.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -22,26 +23,10 @@ class CustomDrawer extends StatelessWidget {
 
           _buildListView(),
           Spacer(),
-          _groupIcons(),
+          GroupIcons.horizontal(),
           Gap(gap: 20),
         ],
       ),
-    );
-  }
-
-  Row _groupIcons() {
-    return Row(
-      spacing: 20,
-      mainAxisAlignment: MainAxisAlignment.center,
-      mainAxisSize: MainAxisSize.max,
-      children: [
-        IconButton(onPressed: () {}, icon: FaIcon(FontAwesomeIcons.github)),
-        IconButton(onPressed: () {}, icon: FaIcon(FontAwesomeIcons.linkedin)),
-        IconButton(
-          onPressed: () {},
-          icon: FaIcon(FontAwesomeIcons.solidEnvelope),
-        ),
-      ],
     );
   }
 
