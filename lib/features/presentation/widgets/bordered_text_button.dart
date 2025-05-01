@@ -4,11 +4,13 @@ class BorderedTextButton extends StatelessWidget {
   final VoidCallback onTap;
   final String text;
   final bool dark;
+  final bool mini;
   const BorderedTextButton({
     super.key,
     required this.onTap,
     this.dark = false,
     required this.text,
+    this.mini = false,
   });
   //factor constructor dark for grey look
   factory BorderedTextButton.dark({
@@ -17,9 +19,21 @@ class BorderedTextButton extends StatelessWidget {
   }) {
     return BorderedTextButton(onTap: onTap, text: text, dark: true);
   }
+  //special factory constructor for smaller button with the same look
+  factory BorderedTextButton.mini({
+    required VoidCallback onTap,
+    required String text,
+  }) {
+    return BorderedTextButton(onTap: onTap, text: text, mini: true);
+  }
 
   @override
   Widget build(BuildContext context) {
+    //fi the mini is true then a lesser font size
+    double? fontSize;
+    if (mini) {
+      fontSize = 10;
+    }
     return TextButton(
       style: ButtonStyle(
         shape: WidgetStatePropertyAll(
@@ -41,7 +55,9 @@ class BorderedTextButton extends StatelessWidget {
         style:
             dark
                 ? Theme.of(context).textTheme.bodyMedium
-                : Theme.of(context).textTheme.bodyLarge,
+                : Theme.of(
+                  context,
+                ).textTheme.bodyLarge?.copyWith(fontSize: fontSize),
       ),
     );
   }
