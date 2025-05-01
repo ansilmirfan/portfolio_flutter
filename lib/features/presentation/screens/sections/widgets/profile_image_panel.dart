@@ -24,13 +24,15 @@ class ProfileImagePanel extends StatelessWidget {
             children: [
               //logo in the background
               Align(
-                alignment: Alignment(-0.7, -0.7),
+                alignment: Alignment(-1.0, -1.0),
                 child: Image.network('assets/images/logo.png', width: 250),
               ),
               //user image
               Image.network('assets/images/hoodie1.png'),
-              Align(
-                alignment: Alignment(0.6, 0.8),
+              Positioned(
+                bottom: 0,
+                left: width.multiply(0.75),
+
                 child: DotContainer(row: 6, column: 6),
               ),
             ],
