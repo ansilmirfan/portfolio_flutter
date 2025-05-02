@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:portfolio/features/presentation/screens/home.dart';
 import 'package:portfolio/features/presentation/themes/app_theme.dart';
@@ -12,6 +14,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      scrollBehavior: const MaterialScrollBehavior().copyWith(
+        dragDevices: {PointerDeviceKind.mouse, PointerDeviceKind.touch},
+      ),
       debugShowCheckedModeBanner: false,
       theme: AppTheme.themeData,
       home: Home(),
