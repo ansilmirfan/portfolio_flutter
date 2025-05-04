@@ -56,6 +56,8 @@ class Data {
       title: "Portfolio",
       slogan: "Built with Passion. Designed to Impress",
       languages: "Flutter",
+      image: "assets/images/portfolio.png",
+      logoImage: "assets/images/portfolio.png",
       description:
           "A responsive Flutter web application that showcases my"
           " projects with smooth animations and a visually appealing UI."
