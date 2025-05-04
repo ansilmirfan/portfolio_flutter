@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       scrollBehavior: const MaterialScrollBehavior().copyWith(
         dragDevices: {PointerDeviceKind.mouse, PointerDeviceKind.touch},
+        physics: BouncingScrollPhysics(),
       ),
       debugShowCheckedModeBanner: false,
       theme: AppTheme.themeData,
