@@ -1,5 +1,4 @@
 import 'dart:ui';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/utils/extension/extensions.dart';
 import 'package:portfolio/core/utils/screen_utils.dart';
@@ -37,6 +36,7 @@ class _ProjectViewState extends State<ProjectView> {
               color: Colors.transparent,
               child: SafeArea(
                 child: BackdropFilter(
+                  //background blur
                   filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
                   child: Center(
                     child: Padding(
@@ -55,16 +55,17 @@ class _ProjectViewState extends State<ProjectView> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           spacing: 10,
                           children: [
+                            //image only visdible if the image is not null
                             if (widget.project.image != null) _image(),
-
+                            //title
                             HashText(text: widget.project.title),
                             Divider(),
-
+                            //languages used
                             Text(
                               widget.project.languages,
                               style: Theme.of(context).textTheme.bodyMedium,
                             ),
-
+                            //description about the projects
                             Text(widget.project.description),
                             Divider(),
                             _buttons(),
@@ -103,11 +104,5 @@ class _ProjectViewState extends State<ProjectView> {
         ),
       ],
     );
-  }
-
-  _updatePossition(PointerHoverEvent event) {
-    setState(() {
-      position = event.position;
-    });
   }
 }
