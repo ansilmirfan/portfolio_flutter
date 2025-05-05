@@ -31,62 +31,60 @@ class _ProjectViewState extends State<ProjectView> {
       backgroundColor: Colors.transparent,
       body: GestureDetector(
         onTap: () => context.pop(),
-        child: MouseRegion(
-          onHover: (event) => _updatePossition(event),
-          child: Stack(
-            children: [
-              Material(
-                color: Colors.transparent,
-                child: SafeArea(
-                  child: BackdropFilter(
-                    filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                    child: Center(
-                      child: Padding(
-                        padding: const EdgeInsets.only(bottom: 20),
-                        child: Container(
-                          padding: EdgeInsets.all(15),
-                          width: width,
+        child: Stack(
+          children: [
+            Material(
+              color: Colors.transparent,
+              child: SafeArea(
+                child: BackdropFilter(
+                  filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                  child: Center(
+                    child: Padding(
+                      padding: const EdgeInsets.only(bottom: 20),
+                      child: Container(
+                        padding: EdgeInsets.all(15),
+                        width: width,
 
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Theme.of(context).colorScheme.secondary,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Theme.of(context).colorScheme.secondary,
+                          ),
+                        ),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          spacing: 10,
+                          children: [
+                            if (widget.project.image != null) _image(),
+
+                            HashText(text: widget.project.title),
+                            Divider(),
+
+                            Text(
+                              widget.project.languages,
+                              style: Theme.of(context).textTheme.bodyMedium,
                             ),
-                          ),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              if (widget.project.image != null)
-                                Expanded(
-                                  child: Image.network(
-                                    widget.project.image!,
-                                    fit: BoxFit.fitWidth,
-                                  ),
-                                ),
-                              if (widget.project.image != null) Divider(),
-                              HashText(text: widget.project.title),
-                              Divider(),
 
-                              Text(
-                                widget.project.languages,
-                                style: Theme.of(context).textTheme.bodyMedium,
-                              ),
-
-                              Text(widget.project.description),
-                              Divider(),
-                              _buttons(),
-                            ],
-                          ),
+                            Text(widget.project.description),
+                            Divider(),
+                            _buttons(),
+                          ],
                         ),
                       ),
                     ),
                   ),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
+    );
+  }
+
+  Expanded _image() {
+    return Expanded(
+      child: Image.network(widget.project.image!, fit: BoxFit.fitWidth),
     );
   }
 
