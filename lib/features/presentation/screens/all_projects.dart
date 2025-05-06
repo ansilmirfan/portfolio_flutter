@@ -7,6 +7,7 @@ import 'package:portfolio/features/presentation/screens/sections/widgets/project
 import 'package:portfolio/features/presentation/widgets/bordered_container.dart';
 import 'package:portfolio/features/presentation/widgets/dot_container.dart';
 import 'package:portfolio/features/presentation/widgets/gap.dart';
+import 'package:portfolio/features/presentation/widgets/slide_widget.dart';
 
 class AllProjects extends StatelessWidget {
   const AllProjects({super.key});
@@ -29,6 +30,7 @@ class AllProjects extends StatelessWidget {
                 child: SizedBox(
                   width: width,
                   child: Column(
+                    spacing: 20,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Gap(gap: 20),
@@ -74,8 +76,12 @@ class AllProjects extends StatelessWidget {
     );
   }
 
-  SizedBox _title(String title) {
-    return SizedBox(width: double.infinity, child: LinedTitle(title: title));
+  Widget _title(String title) {
+    return SlideWidget(
+      slide: Slide.toLeft,
+      delay: 200,
+      child: SizedBox(width: double.infinity, child: LinedTitle(title: title)),
+    );
   }
 
   Widget _horizontalProjectList(List projectList, {required double height}) {
@@ -86,9 +92,13 @@ class AllProjects extends StatelessWidget {
         clipBehavior: Clip.none,
         itemCount: projectList.length,
         itemBuilder:
-            (context, index) => SizedBox(
-              width: 250,
-              child: ProjectCard(project: projectList[index]),
+            (context, index) => SlideWidget(
+              slide: Slide.toLeft,
+              delay: 200 + ((index + 1) * 200),
+              child: SizedBox(
+                width: 250,
+                child: ProjectCard(project: projectList[index]),
+              ),
             ),
       ),
     );
@@ -100,10 +110,14 @@ class AllProjects extends StatelessWidget {
       runSpacing: 15,
       children: List.generate(
         projectList.length,
-        (index) => SizedBox(
-          height: height,
-          width: 250,
-          child: ProjectCard(project: projectList[index]),
+        (index) => SlideWidget(
+          slide: Slide.toLeft,
+          delay: 200 + ((index + 1) * 200),
+          child: SizedBox(
+            height: height,
+            width: 250,
+            child: ProjectCard(project: projectList[index]),
+          ),
         ),
       ),
     );

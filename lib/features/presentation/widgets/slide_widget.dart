@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
 
 enum Slide { toTop, toLeft, toRight, toBottom }
@@ -28,18 +27,13 @@ class SlideWidgetState extends State<SlideWidget>
   late final Animation<double> _opacityAnimation;
 
   @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
+  void initState() {
+    super.initState();
 
-  @override
-  Widget build(BuildContext context) {
-    // Create the controller inside build to ensure each widget has its own independent controller
     _controller = AnimationController(
       vsync: this,
       duration: widget.duration,
-      reverseDuration: Duration(milliseconds: 400),
+      reverseDuration: const Duration(milliseconds: 400),
     );
 
     final beginOffset = _getBeginOffset(widget.slide);
@@ -56,15 +50,16 @@ class SlideWidgetState extends State<SlideWidget>
 
     // Start the animation after the specified delay
     Future.delayed(Duration(milliseconds: widget.delay), () {
-      if (mounted) {
+      if (_controller.status != AnimationStatus.completed) {
         _controller.forward();
       }
     });
+  }
 
-    return FadeTransition(
-      opacity: _opacityAnimation,
-      child: SlideTransition(position: _offsetAnimation, child: widget.child),
-    );
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 
   Offset _getBeginOffset(Slide direction) {
@@ -81,10 +76,16 @@ class SlideWidgetState extends State<SlideWidget>
   }
 
   Future reverse() async {
-    log('Called');
-
     if (mounted) {
       await _controller.reverse();
     }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return FadeTransition(
+      opacity: _opacityAnimation,
+      child: SlideTransition(position: _offsetAnimation, child: widget.child),
+    );
   }
 }
