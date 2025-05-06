@@ -20,7 +20,7 @@ extension Navigation on BuildContext {
 
       pageBuilder: (context, animation, secondaryAnimation) {
         final slideTransition = Tween(
-          begin: Offset(0, 1),
+          begin: Offset(1, 0),
           end: Offset.zero,
         ).animate(animation);
         return Opacity(
