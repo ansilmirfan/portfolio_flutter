@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/utils/extension/extensions.dart';
 import 'package:portfolio/core/utils/screen_utils.dart';
+import 'package:portfolio/features/data/services/url_launcher_service.dart';
 import 'package:portfolio/features/presentation/screens/sections/widgets/home_intro_contents.dart';
 import 'package:portfolio/features/presentation/screens/sections/widgets/profile_image_panel.dart';
 import 'package:portfolio/features/presentation/widgets/bordered_container.dart';
@@ -41,7 +42,13 @@ class HomeSection extends StatelessWidget {
           children: [
             Spacer(),
             //cv download button
-            BorderedTextButton(onTap: () {}, text: "  Download CV ↓"),
+            BorderedTextButton(
+              onTap:
+                  () => UrlLauncherService.launch(
+                    'https://drive.google.com/uc?export=view&id=1K002nHDUXPArRGitodMeY459utlu1v9R',
+                  ),
+              text: "  Download Resume ↓",
+            ),
             Spacer(),
             Transform.translate(
               offset: Offset(20.5, 1),
