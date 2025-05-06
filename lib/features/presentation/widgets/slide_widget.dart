@@ -21,7 +21,7 @@ class SlideWidget extends StatefulWidget {
 }
 
 class SlideWidgetState extends State<SlideWidget>
-    with SingleTickerProviderStateMixin {
+    with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
   late final AnimationController _controller;
   late final Animation<Offset> _offsetAnimation;
   late final Animation<double> _opacityAnimation;
@@ -83,9 +83,13 @@ class SlideWidgetState extends State<SlideWidget>
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return FadeTransition(
       opacity: _opacityAnimation,
       child: SlideTransition(position: _offsetAnimation, child: widget.child),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
