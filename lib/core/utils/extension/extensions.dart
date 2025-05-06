@@ -14,8 +14,8 @@ extension Navigation on BuildContext {
     PageRouteBuilder(
       opaque: false,
       barrierDismissible: true,
-      transitionDuration: Duration(milliseconds: 400),
-      reverseTransitionDuration: Duration(milliseconds: 400),
+      transitionDuration: Duration(milliseconds: 600),
+      reverseTransitionDuration: Duration(milliseconds: 600),
       barrierColor: Colors.black45,
 
       pageBuilder: (context, animation, secondaryAnimation) {
