@@ -129,7 +129,7 @@ class ResponsiveProjectList extends StatelessWidget {
   Widget _animatedProject(int index) {
     return SlideWidget(
       slide: Slide.toLeft,
-      delay: 200 + ((index + 1) * 200),
+      delay: ((index + 1) * 200),
       child: ProjectCard(project: projects[index]),
     );
   }
