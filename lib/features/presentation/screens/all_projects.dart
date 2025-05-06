@@ -60,17 +60,9 @@ class AllProjects extends StatelessWidget {
 
   Positioned _borderedContainers() {
     return Positioned(
-      left: 0,
+      left: -10,
       top: 180,
-      child: Column(
-        spacing: 50,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          BorderedContainer(height: 30, width: 30),
-          BorderedContainer(height: 60, width: 40),
-          BorderedContainer(height: 60, width: 50),
-        ],
-      ),
+      child: BorderedContainer(height: 140, width: 50),
     );
   }
 
