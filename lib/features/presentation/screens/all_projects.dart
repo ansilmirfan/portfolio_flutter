@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/core/utils/extension/extensions.dart';
 import 'package:portfolio/core/utils/screen_utils.dart';
 import 'package:portfolio/features/data/data.dart';
+import 'package:portfolio/features/data/models/project.dart';
 import 'package:portfolio/features/presentation/screens/sections/widgets/lined_title.dart';
 import 'package:portfolio/features/presentation/screens/sections/widgets/project_card.dart';
 import 'package:portfolio/features/presentation/widgets/bordered_container.dart';
@@ -35,19 +36,19 @@ class AllProjects extends StatelessWidget {
                     children: [
                       Gap(gap: 20),
                       _title('Main Projects'),
-                      isMobile
-                          ? _horizontalProjectList(
-                            Data.mainProjects,
-                            height: 300,
-                          )
-                          : _wrapProjectList(Data.mainProjects, height: 300),
+                      ResponsiveProjectList(
+                        height: 300,
+                        projects: Data.mainProjects,
+
+                        isMobile: isMobile,
+                      ),
                       _title('Small Projects'),
-                      isMobile
-                          ? _horizontalProjectList(
-                            Data.smallProjects,
-                            height: 175,
-                          )
-                          : _wrapProjectList(Data.smallProjects, height: 175),
+                      ResponsiveProjectList(
+                        height: 175,
+                        projects: Data.smallProjects,
+
+                        isMobile: isMobile,
+                      ),
                       Gap(gap: 50),
                     ],
                   ),
@@ -83,43 +84,53 @@ class AllProjects extends StatelessWidget {
       child: SizedBox(width: double.infinity, child: LinedTitle(title: title)),
     );
   }
+}
 
-  Widget _horizontalProjectList(List projectList, {required double height}) {
-    return SizedBox(
-      height: height + 20,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        clipBehavior: Clip.none,
-        itemCount: projectList.length,
-        itemBuilder:
-            (context, index) => SlideWidget(
-              slide: Slide.toLeft,
-              delay: 200 + ((index + 1) * 200),
-              child: SizedBox(
-                width: 250,
-                child: ProjectCard(project: projectList[index]),
-              ),
-            ),
-      ),
-    );
-  }
+class ResponsiveProjectList extends StatelessWidget {
+  final List<Project> projects;
+  final double height;
+  final bool isMobile;
 
-  Widget _wrapProjectList(List projectList, {required double height}) {
-    return Wrap(
-      spacing: 15,
-      runSpacing: 15,
-      children: List.generate(
-        projectList.length,
-        (index) => SlideWidget(
-          slide: Slide.toLeft,
-          delay: 200 + ((index + 1) * 200),
-          child: SizedBox(
+  const ResponsiveProjectList({
+    super.key,
+    required this.projects,
+    required this.height,
+    required this.isMobile,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    if (isMobile) {
+      return SizedBox(
+        height: height + 20,
+        child: ListView.builder(
+          clipBehavior: Clip.none,
+          scrollDirection: Axis.horizontal,
+          itemCount: projects.length,
+          itemBuilder: (context, index) => _animatedProject(index),
+        ),
+      );
+    } else {
+      return Wrap(
+        spacing: 15,
+        runSpacing: 15,
+        children: List.generate(
+          projects.length,
+          (index) => SizedBox(
             height: height,
             width: 250,
-            child: ProjectCard(project: projectList[index]),
+            child: _animatedProject(index),
           ),
         ),
-      ),
+      );
+    }
+  }
+
+  Widget _animatedProject(int index) {
+    return SlideWidget(
+      slide: Slide.toLeft,
+      delay: 200 + ((index + 1) * 200),
+      child: ProjectCard(project: projects[index]),
     );
   }
 }
