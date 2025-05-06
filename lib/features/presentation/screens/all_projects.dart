@@ -24,7 +24,7 @@ class AllProjects extends StatelessWidget {
           child: Stack(
             children: [
               if (!isMobile) _dots(),
-              if (!isMobile) _borderedContainers(),
+              if (!isMobile) _borderedContainer(),
               Center(
                 child: SizedBox(
                   width: width,
@@ -58,7 +58,7 @@ class AllProjects extends StatelessWidget {
     );
   }
 
-  Positioned _borderedContainers() {
+  Positioned _borderedContainer() {
     return Positioned(
       left: -10,
       top: 180,

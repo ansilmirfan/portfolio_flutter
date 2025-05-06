@@ -56,7 +56,7 @@ class ProjectsSection extends StatelessWidget {
         Expanded(child: LinedTitle(title: 'projects')),
         Gap.width(gap: 20),
         BorderedTextButton.mini(
-          onTap: () => context.push(AllProjects()),
+          onTap: () => context.pushTransperent(AllProjects()),
           text: 'view all-->',
         ),
       ],
