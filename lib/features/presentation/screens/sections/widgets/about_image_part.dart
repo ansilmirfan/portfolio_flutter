@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/utils/extension/extensions.dart';
+import 'package:portfolio/features/presentation/themes/color/app_colors.dart';
 import 'package:portfolio/features/presentation/widgets/dot_container.dart';
-import 'package:portfolio/features/presentation/widgets/horizontal_line.dart';
 
 class AboutImagePart extends StatelessWidget {
   final double width;
@@ -19,14 +19,10 @@ class AboutImagePart extends StatelessWidget {
         child: Stack(
           alignment: Alignment.center,
           children: [
-            Column(
-              children: [
-                Image.network(
-                  'assets/images/hoodie2.png',
-                  width: width.multiply(0.5),
-                ),
-                SizedBox(width: width.multiply(0.5), child: HorizontalLine()),
-              ],
+            Image.network(
+              'assets/images/am.png',
+              color: AppColors.primary,
+              width: width.multiply(0.5),
             ),
             AnimatedPositioned(
               duration: duration,
