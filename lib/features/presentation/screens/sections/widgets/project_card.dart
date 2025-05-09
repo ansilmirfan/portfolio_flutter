@@ -99,6 +99,7 @@ class _ProjectCardState extends State<ProjectCard>
                                   widget.project.logoImage!,
                                   width: double.infinity,
                                   fit: BoxFit.cover,
+                                  color: Theme.of(context).colorScheme.primary,
                                 ),
                               ),
                             ),
