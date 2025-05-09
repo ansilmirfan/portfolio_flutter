@@ -7,7 +7,7 @@ class Data {
       title: 'Fork and Fusion',
       slogan: 'Scan. Select. Satisfy',
       languages: 'Flutter',
-      logoImage: 'assets/images/fork_and_fusion/fork-and-fusion.png',
+      logoImage: 'assets/images/fork_and_fusion/fork_and_fusion.png',
       image: "assets/images/fork_and_fusion/fork-and-fusion-group.png",
       gitHubLink: "https://github.com/ansilmirfan/fork_and_fusion",
       liveLink: "https://www.amazon.com/dp/B0DLWZYFTZ/ref=apps_sf_sta",
@@ -28,7 +28,7 @@ class Data {
       gitHubLink: "https://github.com/ansilmirfan/daily_track",
       liveLink: "https://www.amazon.com/dp/B0CW1CXTP6/ref=apps_sf_sta",
       image: "assets/images/daily_track/daily-track-group.png",
-      logoImage: "assets/images/daily_track/daily_track.png",
+      logoImage: "assets/images/daily_track/daily-track.png",
       description:
           "Daily Trac is a Flutter application designed to help users track "
           "their daily activities and tasks efficiently. With intuitive features "
@@ -57,7 +57,7 @@ class Data {
       slogan: "Built with Passion. Designed to Impress",
       languages: "Flutter",
       image: "assets/images/portfolio.png",
-      logoImage: "assets/images/portfolio.png",
+      logoImage: "assets/images/am_extended.png",
       description:
           "A responsive Flutter web application that showcases my"
           " projects with smooth animations and a visually appealing UI."
