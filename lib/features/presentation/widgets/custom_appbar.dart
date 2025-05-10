@@ -16,21 +16,27 @@ class CustomAppbar extends StatelessWidget {
     return SliverAppBar(
       //if the device is mobile or screen size is equals mobile size then it returns null
       title:
-          //if the screen is mobile then the title is null otherwise the name will be shown
-          ScreenUtils.isMobile(context)
-              ? null
-              //propotionate padding in the left side of the spacing will be always 5 percentage of the screen width
-              : Padding(
-                padding: EdgeInsets.only(
-                  left: ScreenUtils.width(context).multiply(0.05),
-                ),
-                child: Text(
-                  'Ansil Mirfan',
-                  style: Theme.of(context).textTheme.bodyLarge,
-                ),
-              ),
+      //if the screen is mobile then the title is null otherwise the name will be shown
+      //propotionate padding in the left side of the spacing will be always 5 percentage of the screen width
+      Padding(
+        padding: EdgeInsets.only(
+          left: ScreenUtils.width(context).multiply(0.05),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          spacing: 10,
+          children: [
+            Image.network(
+              "assets/images/am.png",
+              width: 25,
+              color: AppColors.primary,
+            ),
+            Text('Ansil Mirfan', style: Theme.of(context).textTheme.bodyLarge),
+          ],
+        ),
+      ),
       //if the device is mobile or screen size is equals mobile size then it returns null
-      actions: ScreenUtils.isMobile(context) ? null : [AppBarItems()],
+      actions: !ScreenUtils.isDesktop(context) ? null : [AppBarItems()],
     );
   }
 }
