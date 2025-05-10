@@ -35,7 +35,7 @@ class CustomAppbar extends StatelessWidget {
           ],
         ),
       ),
-      //if the device is mobile or screen size is equals mobile size then it returns null
+      //if the device is not desktop then it returns null
       actions: !ScreenUtils.isDesktop(context) ? null : [AppBarItems()],
     );
   }
