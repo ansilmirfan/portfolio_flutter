@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/core/constants/section_keys.dart';
 import 'package:portfolio/core/utils/screen_utils.dart';
 import 'package:portfolio/features/presentation/screens/sections/about_section.dart';
+import 'package:portfolio/features/presentation/screens/sections/contacts_section.dart';
+import 'package:portfolio/features/presentation/screens/sections/footer_section.dart';
 import 'package:portfolio/features/presentation/screens/sections/home_section.dart';
 import 'package:portfolio/features/presentation/screens/sections/projects_section.dart';
 import 'package:portfolio/features/presentation/screens/sections/skills_section.dart';
@@ -30,6 +32,9 @@ class Home extends StatelessWidget {
               Gap(gap: 30),
               SkillsSection(key: SectionKeys.sectionKeys[3]),
               Gap(gap: 30),
+              ContactsSection(key: SectionKeys.sectionKeys[4]),
+              Gap(gap: 30),
+              FooterSection(),
             ]),
           ),
         ],
