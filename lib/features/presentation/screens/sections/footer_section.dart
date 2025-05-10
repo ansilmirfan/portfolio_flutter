@@ -19,6 +19,7 @@ class FooterSection extends StatelessWidget {
     final wFactor = isMobile ? 0.9 : 0.44;
     final width = ScreenUtils.width(context).multiply(wFactor);
     return Column(
+      spacing: 20,
       children: [
         Divider(),
         Wrap(
@@ -84,7 +85,7 @@ class FooterSection extends StatelessWidget {
             ),
           ],
         ),
-        Gap(gap: 50),
+        Gap(gap: 40),
       ],
     );
   }
