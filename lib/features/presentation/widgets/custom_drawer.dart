@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/utils/extension/extensions.dart';
+import 'package:portfolio/features/data/services/scroll_service.dart';
 import 'package:portfolio/features/presentation/themes/color/app_colors.dart';
 import 'package:portfolio/features/presentation/value_listenable/selected_nav.dart';
 import 'package:portfolio/features/presentation/widgets/gap.dart';
@@ -113,6 +114,7 @@ class _NavListTileState extends State<_NavListTile>
               if (!widget.isSelected) {
                 SelectedNav.update(widget.index);
                 context.pop();
+                ScrollService.scrollToPosition(widget.index);
               }
             },
             shape: LinearBorder(
