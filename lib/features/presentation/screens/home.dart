@@ -18,7 +18,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       //drawer will be only visible if the screen width is less than 800
-      drawer: ScreenUtils.isMobile(context) ? CustomDrawer() : null,
+      drawer: !ScreenUtils.isDesktop(context) ? CustomDrawer() : null,
       body: CustomScrollView(
         slivers: [
           CustomAppbar(),
