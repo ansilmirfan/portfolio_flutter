@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:portfolio/core/constants/animated_icons.dart';
 
 class GroupIcons extends StatelessWidget {
   final Axis direction;
   final MainAxisSize mainAxisSize;
 
-  const GroupIcons({
+  GroupIcons({
     super.key,
     required this.direction,
     this.mainAxisSize = MainAxisSize.max,
@@ -22,21 +22,10 @@ class GroupIcons extends StatelessWidget {
   factory GroupIcons.vertical({MainAxisSize mainAxisSize = MainAxisSize.max}) {
     return GroupIcons(direction: Axis.vertical, mainAxisSize: mainAxisSize);
   }
+  final icons = [AnimIcon.gitHub, AnimIcon.linkedin, AnimIcon.email];
 
   @override
   Widget build(BuildContext context) {
-    final icons = [
-      IconButton(onPressed: () {}, icon: const FaIcon(FontAwesomeIcons.github)),
-      IconButton(
-        onPressed: () {},
-        icon: const FaIcon(FontAwesomeIcons.linkedin),
-      ),
-      IconButton(
-        onPressed: () {},
-        icon: const FaIcon(FontAwesomeIcons.solidEnvelope),
-      ),
-    ];
-
     return direction == Axis.horizontal
         ? Row(
           spacing: 20,
