@@ -14,6 +14,9 @@ class CustomAppbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
+      backgroundColor: Colors.transparent,
+
+      floating: true,
       //if the device is mobile or screen size is equals mobile size then it returns null
       title:
       //if the screen is mobile then the title is null otherwise the name will be shown
