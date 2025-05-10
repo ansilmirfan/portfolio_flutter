@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/utils/extension/extensions.dart';
 import 'package:portfolio/core/utils/screen_utils.dart';
+import 'package:portfolio/features/data/services/scroll_service.dart';
 import 'package:portfolio/features/presentation/themes/color/app_colors.dart';
 import 'package:portfolio/features/presentation/value_listenable/selected_nav.dart';
 import 'package:portfolio/features/presentation/widgets/gap.dart';
@@ -14,8 +15,6 @@ class CustomAppbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      backgroundColor: Colors.transparent,
-
       floating: true,
       //if the device is mobile or screen size is equals mobile size then it returns null
       title:
@@ -171,6 +170,8 @@ class _NavButtonState extends State<_NavButton>
               if (!isSelected) {
                 SelectedNav.update(widget.index);
               }
+              //scrolling to the possition
+              ScrollService.scrollToPosition(widget.index);
             },
             child: HashText(text: widget.label),
           );
