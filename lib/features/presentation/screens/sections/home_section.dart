@@ -9,7 +9,6 @@ import 'package:portfolio/features/presentation/widgets/bordered_container.dart'
 import 'package:portfolio/features/presentation/widgets/bordered_text_button.dart';
 
 import 'package:portfolio/features/presentation/widgets/group_icons.dart';
-import 'package:portfolio/features/presentation/widgets/slide_widget.dart';
 
 class HomeSection extends StatelessWidget {
   const HomeSection({super.key});

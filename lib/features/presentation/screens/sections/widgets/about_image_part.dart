@@ -23,20 +23,20 @@ class AboutImagePart extends StatelessWidget {
               'assets/images/am.png',
               color: AppColors.primary,
               width: width.multiply(0.5),
-            ),
+            ).slideToLeft(delay: 600),
             AnimatedPositioned(
               duration: duration,
               left: width.multiply(0.5),
               top: width.multiply(0.4),
 
-              child: DotContainer(row: 6, column: 6),
+              child: DotContainer(row: 6, column: 6).slideToLeft(delay: 550),
             ),
 
             AnimatedPositioned(
               duration: duration,
               top: 0,
               left: width.multiply(0.3),
-              child: DotContainer(row: 7, column: 3),
+              child: DotContainer(row: 7, column: 3).slideToLeft(delay: 700),
             ),
           ],
         ),

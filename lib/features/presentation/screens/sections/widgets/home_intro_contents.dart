@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/core/utils/extension/extensions.dart';
+import 'package:portfolio/features/data/services/scroll_service.dart';
 import 'package:portfolio/features/presentation/widgets/bordered_text_button.dart';
 import 'package:portfolio/features/presentation/widgets/gap.dart';
+import 'package:portfolio/features/presentation/widgets/slide_widget.dart';
 
 class HomeIntroContents extends StatelessWidget {
   final double width;
@@ -36,14 +39,21 @@ class HomeIntroContents extends StatelessWidget {
                 ),
               ],
             ),
-          ),
+          ).slideToRight(),
           Gap(gap: 40),
           //slogan text
-          Text('Transforming Ideas into Apps with Flutter.'),
+          Text(
+            'Transforming Ideas into Apps with Flutter.',
+          ).slideToRight(delay: 250),
           Gap(gap: 20),
           //only visible if is a smaller size device
           if (isNotMobile)
-            BorderedTextButton(onTap: () {}, text: 'Contact me!!'),
+            BorderedTextButton(
+              onTap: () {
+                ScrollService.scrollToPosition(4);
+              },
+              text: 'Contact me!!',
+            ).slideToRight(delay: 300),
         ],
       ),
     );

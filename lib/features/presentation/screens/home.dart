@@ -20,6 +20,7 @@ class Home extends StatelessWidget {
       //drawer will be only visible if the screen width is less than 800
       drawer: !ScreenUtils.isDesktop(context) ? CustomDrawer() : null,
       body: CustomScrollView(
+        cacheExtent: 10,
         slivers: [
           CustomAppbar(),
           SliverList(

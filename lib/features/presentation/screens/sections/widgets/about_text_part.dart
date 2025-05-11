@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/core/utils/extension/extensions.dart';
 import 'package:portfolio/features/presentation/screens/sections/widgets/lined_title.dart';
 import 'package:portfolio/features/presentation/widgets/bordered_text_button.dart';
 
@@ -24,14 +25,14 @@ class _AboutTextPartState extends State<AboutTextPart> {
         crossAxisAlignment: CrossAxisAlignment.start,
         spacing: 30,
         children: [
-          const LinedTitle(title: 'about-me'),
+          const LinedTitle(title: 'about-me').slideToRight(delay: 450),
 
           _aboutMeText(),
 
           BorderedTextButton(
             onTap: update,
             text: expanded ? 'Read less ←' : 'Read more →',
-          ),
+          ).slideToRight(delay: 550),
         ],
       ),
     );
@@ -60,7 +61,7 @@ class _AboutTextPartState extends State<AboutTextPart> {
 
         maxLines: expanded ? 100 : 10,
         overflow: TextOverflow.fade,
-      ),
+      ).slideToRight(delay: 500),
     );
   }
 }

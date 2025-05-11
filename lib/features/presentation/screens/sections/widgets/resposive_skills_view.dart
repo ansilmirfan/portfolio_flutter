@@ -48,7 +48,10 @@ class MobileView extends StatelessWidget {
     return Column(
       spacing: 10,
       children: [
-        SizedBox(width: double.infinity, child: LinedTitle(title: 'skills')),
+        SizedBox(
+          width: double.infinity,
+          child: LinedTitle(title: 'skills').slideToRight(delay: 200),
+        ),
         LayoutBuilder(
           builder:
               (context, constraints) => Wrap(
@@ -58,7 +61,9 @@ class MobileView extends StatelessWidget {
                   5,
                   (index) => SizedBox(
                     width: constraints.maxWidth.multiply(0.45),
-                    child: skillsList[index],
+                    child: skillsList[index].slideToLeft(
+                      delay: (index * 50) + 200,
+                    ),
                   ),
                 ),
               ),
@@ -89,9 +94,25 @@ class DeskTopView extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(child: Column(children: [skillsList[0]])),
-            Expanded(child: Column(children: [skillsList[1], skillsList[2]])),
-            Expanded(child: Column(children: [skillsList[3], skillsList[4]])),
+            Expanded(
+              child: Column(children: [skillsList[0].slideToLeft(delay: 200)]),
+            ),
+            Expanded(
+              child: Column(
+                children: [
+                  skillsList[1].slideToLeft(delay: 250),
+                  skillsList[2]..slideToLeft(delay: 300),
+                ],
+              ),
+            ),
+            Expanded(
+              child: Column(
+                children: [
+                  skillsList[3].slideToLeft(delay: 350),
+                  skillsList[4].slideToLeft(delay: 400),
+                ],
+              ),
+            ),
           ],
         ),
       ),
@@ -102,34 +123,51 @@ class DeskTopView extends StatelessWidget {
     return Column(
       spacing: 20,
       children: [
-        const LinedTitle(title: "skills"),
+        const LinedTitle(title: "skills").slideToRight(delay: 200),
         SizedBox(
           height: 250,
           child: Center(
             child: Stack(
               clipBehavior: Clip.none,
               children: [
-                const Positioned(
+                Positioned(
                   top: 10,
                   left: 0,
-                  child: DotContainer(row: 5, column: 5),
+                  child: DotContainer(
+                    row: 5,
+                    column: 5,
+                  ).slideToRight(delay: 400),
                 ),
-                const Positioned(
+                Positioned(
                   top: 0,
                   right: 10,
-                  child: BorderedContainer(height: 50, width: 50),
+                  child: BorderedContainer(
+                    height: 50,
+                    width: 50,
+                  ).slideToRight(delay: 300),
                 ),
                 Positioned(
                   bottom: 0,
                   left: 10,
-                  child: Image.asset('assets/images/logo.png', height: 80),
+                  child: Image.asset(
+                    'assets/images/logo.png',
+                    height: 80,
+                  ).slideToRight(delay: 450),
                 ),
-                const Positioned(
+                Positioned(
                   right: 0,
                   bottom: 10,
-                  child: DotContainer(row: 5, column: 5),
+                  child: DotContainer(
+                    row: 5,
+                    column: 5,
+                  ).slideToRight(delay: 250),
                 ),
-                const Center(child: BorderedContainer(height: 50, width: 50)),
+                Center(
+                  child: BorderedContainer(
+                    height: 50,
+                    width: 50,
+                  ).slideToRight(delay: 350),
+                ),
               ],
             ),
           ),
