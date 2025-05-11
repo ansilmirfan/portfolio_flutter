@@ -39,8 +39,9 @@ class ProjectsSection extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   itemCount: Data.mainProjects.length,
                   itemBuilder:
-                      (context, index) =>
-                          ProjectCard(project: Data.mainProjects[index]),
+                      (context, index) => ProjectCard(
+                        project: Data.mainProjects[index],
+                      ).slideToLeft(delay: (index * 50) + 200),
                 ),
               ),
             ],
@@ -53,12 +54,12 @@ class ProjectsSection extends StatelessWidget {
   Row _header(BuildContext context) {
     return Row(
       children: [
-        Expanded(child: LinedTitle(title: 'projects')),
+        Expanded(child: LinedTitle(title: 'projects').slideToRight(delay: 300)),
         Gap.width(gap: 20),
         BorderedTextButton.mini(
           onTap: () => context.pushTransperent(AllProjects()),
           text: 'view all-->',
-        ),
+        ).slideToLeft(delay: 300),
       ],
     );
   }
