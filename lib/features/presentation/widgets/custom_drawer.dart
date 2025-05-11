@@ -30,8 +30,18 @@ class CustomDrawer extends StatelessWidget {
     );
   }
 
-  Text _buildName(BuildContext context) =>
-      Text('Ansil Mirfan', style: Theme.of(context).textTheme.bodyLarge);
+  Widget _buildName(BuildContext context) => Row(
+    spacing: 10,
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      Image.network(
+        "assets/images/am.png",
+        height: 25,
+        color: AppColors.primary,
+      ),
+      Text('Ansil Mirfan', style: Theme.of(context).textTheme.bodyLarge),
+    ],
+  );
 
   Expanded _buildListView() {
     return Expanded(
