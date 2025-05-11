@@ -3,7 +3,6 @@ import 'package:portfolio/core/utils/extension/extensions.dart';
 import 'package:portfolio/features/data/services/scroll_service.dart';
 import 'package:portfolio/features/presentation/widgets/bordered_text_button.dart';
 import 'package:portfolio/features/presentation/widgets/gap.dart';
-import 'package:portfolio/features/presentation/widgets/slide_widget.dart';
 
 class HomeIntroContents extends StatelessWidget {
   final double width;
