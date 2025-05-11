@@ -9,6 +9,7 @@ import 'package:portfolio/features/presentation/widgets/bordered_container.dart'
 import 'package:portfolio/features/presentation/widgets/bordered_text_button.dart';
 
 import 'package:portfolio/features/presentation/widgets/group_icons.dart';
+import 'package:portfolio/features/presentation/widgets/slide_widget.dart';
 
 class HomeSection extends StatelessWidget {
   const HomeSection({super.key});
@@ -46,7 +47,7 @@ class HomeSection extends StatelessWidget {
             BorderedTextButton(
               onTap: () => UrlLauncherService.launch(Url.resume),
               text: "  Download Resume ↓",
-            ),
+            ).slideToLeft(delay: 400),
             Spacer(),
             Transform.translate(
               offset: Offset(20.5, 1),
