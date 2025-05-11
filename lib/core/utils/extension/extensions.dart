@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/features/presentation/widgets/slide_widget.dart';
 
 extension Propotion on double {
   double multiply(double factor) => this * factor;
@@ -30,4 +31,14 @@ extension Navigation on BuildContext {
       },
     ),
   );
+}
+
+//extension on widget for animation
+extension SlideAnimation on Widget {
+  //animate to left from right
+  Widget slideToLeft({int delay = 0}) =>
+      SlideWidget(slide: Slide.toLeft, delay: delay, child: this);
+  //animate to right from left
+  Widget slideToRight({int delay = 0}) =>
+      SlideWidget(slide: Slide.toRight, delay: delay, child: this);
 }
