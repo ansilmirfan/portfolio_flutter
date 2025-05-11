@@ -38,11 +38,14 @@ class ContactText extends StatelessWidget {
       padding: const EdgeInsets.all(15),
       child: Column(
         spacing: 20,
-        children: const [
-          SizedBox(width: double.infinity, child: LinedTitle(title: "contact")),
+        children: [
+          SizedBox(
+            width: double.infinity,
+            child: LinedTitle(title: "contact"),
+          ).slideToRight(delay: 200),
           Text(
             "Open to freelance and on-site opportunities. Feel free to reach out with any inquiries.",
-          ),
+          ).slideToRight(delay: 250),
         ],
       ),
     );
@@ -59,20 +62,28 @@ class ContactDetails extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          BorderedContainer(
-            padding: 10,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              spacing: 15,
-              children: [
-                Text(
-                  "Message me here",
-                  style: Theme.of(context).textTheme.bodyLarge,
-                ),
-                Contact(icon: AnimIcon.email, text: "ansilmirfan123@gmail.com"),
-                Contact(icon: AnimIcon.mobile, text: "+917356093690"),
-              ],
-            ),
+          ClipRect(
+            child: BorderedContainer(
+              padding: 10,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                spacing: 15,
+                children: [
+                  Text(
+                    "Message me here",
+                    style: Theme.of(context).textTheme.bodyLarge,
+                  ).slideToLeft(delay: 300),
+                  Contact(
+                    icon: AnimIcon.email,
+                    text: "ansilmirfan123@gmail.com",
+                  ).slideToLeft(delay: 350),
+                  Contact(
+                    icon: AnimIcon.mobile,
+                    text: "+917356093690",
+                  ).slideToLeft(delay: 400),
+                ],
+              ),
+            ).slideToLeft(delay: 250),
           ),
         ],
       ),
