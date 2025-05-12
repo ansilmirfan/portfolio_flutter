@@ -1,16 +1,78 @@
-# portfolio
+# Flutter Portfolio Website
 
-A new Flutter project.
+A clean and modern personal portfolio built using **Flutter Web**, showcasing animated sections, reusable custom widgets, and a fully functional contact form — deployed with **Firebase Hosting**.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+[🚀 Visit My Portfolio](https://portfolio-6d8b7.web.app/)
 
-A few resources to get you started if this is your first Flutter project:
+## ✨ Features
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- 🎨 Responsive and elegant UI
+- 🔁 Smooth animations and transitions
+- 🧱 Custom reusable widgets for consistency and clean code
+- 🚀 Firebase Hosting-ready structure
+- 🖼️ Properly configured favicons and web manifest
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+### packages used
+
+- font_awesome_flutter : for icons
+- url_launcher : for opening outside urls
+
+---
+
+#### 🖼️ Preview
+
+## ![portfolio preview](assets/images/portfolio%20preview.png)
+
+---
+
+## 📁 Folder Structure
+
+```
+├── assets/
+│   ├── fonts/
+│   └── images/
+├── lib/
+│   ├── main.dart
+│   └── core/
+│       ├── constants/
+│       │   ├── animated_icons.dart
+│       │   ├── links.dart
+│       │   └── section_keys.dart
+│       ├── utils/
+│           ├── extension/
+│           │   └── extension.dart
+│           └── screen_utils.dart
+│
+│   ├── features/
+│       ├── data/
+│       │   ├── models/
+│       │   │   └── project.dart
+│       │   ├── services/
+│       │   │   ├── scroll_service.dart
+│       │   │   └── url_launcher_service.dart
+│       │   └── data.dart
+│
+│       ├── presentation/
+│           ├── screens/
+│           │   ├── sections/
+│           │   │   └── widgets/
+│           │   ├── all_projects.dart
+│           │   ├── home.dart
+│           │   └── project_view.dart
+│
+│           ├── themes/
+│           │   ├── color/
+│           │   │   └── app_colors.dart
+│           │   ├── app_text_theme.dart
+│           │   └── app_theme.dart
+│
+│           ├── value_listenable/
+│           │   └── selected_nav.dart
+│
+│           ├── widgets/
+│               └── text/
+```
