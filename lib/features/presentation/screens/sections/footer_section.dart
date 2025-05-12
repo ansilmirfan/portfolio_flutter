@@ -33,7 +33,7 @@ class FooterSection extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     spacing: 10,
                     children: [
-                      Image.network(
+                      Image.asset(
                         "assets/images/am.png",
                         width: 30,
                         color: Theme.of(context).colorScheme.primary,

@@ -3,6 +3,7 @@ import 'package:portfolio/core/utils/extension/extensions.dart';
 import 'package:portfolio/features/data/services/scroll_service.dart';
 import 'package:portfolio/features/presentation/widgets/bordered_text_button.dart';
 import 'package:portfolio/features/presentation/widgets/gap.dart';
+import 'package:portfolio/features/presentation/widgets/text/typing_text.dart';
 
 class HomeIntroContents extends StatelessWidget {
   final double width;
@@ -25,10 +26,11 @@ class HomeIntroContents extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.max,
         children: [
+          TypingText(text: 'Ansil Mirfan').slideToRight(),
           RichText(
             //name
             text: TextSpan(
-              text: 'Ansil Mirfan is a ',
+              text: 'is a ',
               style: Theme.of(context).textTheme.headlineLarge,
               children: [
                 //possition
@@ -39,6 +41,7 @@ class HomeIntroContents extends StatelessWidget {
               ],
             ),
           ).slideToRight(),
+
           Gap(gap: 40),
           //slogan text
           Text(

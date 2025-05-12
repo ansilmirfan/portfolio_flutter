@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/core/constants/url.dart';
+import 'package:portfolio/core/constants/links.dart';
 import 'package:portfolio/core/utils/extension/extensions.dart';
 import 'package:portfolio/core/utils/screen_utils.dart';
 import 'package:portfolio/features/data/services/url_launcher_service.dart';

@@ -95,7 +95,7 @@ class _ProjectCardState extends State<ProjectCard>
                           if (widget.project.logoImage != null)
                             Expanded(
                               child: SizedBox(
-                                child: Image.network(
+                                child: Image.asset(
                                   widget.project.logoImage!,
                                   width: double.infinity,
                                   fit: BoxFit.cover,

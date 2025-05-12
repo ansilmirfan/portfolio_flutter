@@ -19,7 +19,7 @@ class AboutImagePart extends StatelessWidget {
         child: Stack(
           alignment: Alignment.center,
           children: [
-            Image.network(
+            Image.asset(
               'assets/images/am.png',
               color: AppColors.primary,
               width: width.multiply(0.5),

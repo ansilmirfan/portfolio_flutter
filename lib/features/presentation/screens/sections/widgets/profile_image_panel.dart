@@ -26,10 +26,10 @@ class ProfileImagePanel extends StatelessWidget {
               //logo in the background
               Align(
                 alignment: Alignment(-1.0, -1.0),
-                child: Image.network('assets/images/logo.png', width: 200),
+                child: Image.asset('assets/images/logo.png', width: 200),
               ).slideToLeft(delay: 250),
               //user image
-              Image.network(
+              Image.asset(
                 'assets/images/am.png',
                 color: AppColors.primary,
                 width: 250,
