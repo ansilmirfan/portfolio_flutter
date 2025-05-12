@@ -34,11 +34,7 @@ class CustomDrawer extends StatelessWidget {
     spacing: 10,
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
-      Image.network(
-        "assets/images/am.png",
-        height: 25,
-        color: AppColors.primary,
-      ),
+      Image.asset("assets/images/am.png", height: 25, color: AppColors.primary),
       Text('Ansil Mirfan', style: Theme.of(context).textTheme.bodyLarge),
     ],
   );
