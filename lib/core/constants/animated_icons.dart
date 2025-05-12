@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:portfolio/core/constants/url.dart';
+import 'package:portfolio/core/constants/links.dart';
 import 'package:portfolio/features/data/services/url_launcher_service.dart';
 import 'package:portfolio/features/presentation/themes/color/app_colors.dart';
 import 'package:portfolio/features/presentation/widgets/animated_icon.dart';
