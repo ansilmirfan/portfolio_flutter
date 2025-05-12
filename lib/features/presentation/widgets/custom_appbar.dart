@@ -28,7 +28,7 @@ class CustomAppbar extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           spacing: 10,
           children: [
-            Image.network(
+            Image.asset(
               "assets/images/am.png",
               width: 25,
               color: AppColors.primary,
