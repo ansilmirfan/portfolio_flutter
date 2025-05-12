@@ -108,7 +108,16 @@ class _ProjectViewState extends State<ProjectView> {
         key: _slideKeys[0],
         slide: Slide.toLeft,
         delay: 200,
-        child: Image.network(widget.project.image!, fit: BoxFit.fitWidth),
+        child: FutureBuilder(
+          future: precacheImage(AssetImage(widget.project.image!), context),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.done) {
+              return Image.asset(widget.project.image!, fit: BoxFit.fitWidth);
+            } else {
+              return Center(child: CircularProgressIndicator(strokeWidth: 2));
+            }
+          },
+        ),
       ),
     );
   }
