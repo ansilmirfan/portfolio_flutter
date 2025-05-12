@@ -1,6 +1,6 @@
 # Flutter Portfolio Website
 
-A clean and modern personal portfolio built using **Flutter Web**, showcasing animated sections, reusable custom widgets, and a fully functional contact form — deployed with **Firebase Hosting**.
+A clean and modern personal portfolio built using **Flutter Web**, showcasing animated sections, reusable custom widgets, and deployed with **Firebase Hosting**.
 
 ---
 
