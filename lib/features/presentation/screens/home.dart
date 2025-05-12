@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/constants/section_keys.dart';
 import 'package:portfolio/core/utils/screen_utils.dart';
+import 'package:portfolio/features/data/services/scroll_service.dart';
 import 'package:portfolio/features/presentation/screens/sections/about_section.dart';
 import 'package:portfolio/features/presentation/screens/sections/contacts_section.dart';
 import 'package:portfolio/features/presentation/screens/sections/footer_section.dart';
@@ -9,6 +10,7 @@ import 'package:portfolio/features/presentation/screens/sections/projects_sectio
 import 'package:portfolio/features/presentation/screens/sections/skills_section.dart';
 import 'package:portfolio/features/presentation/widgets/custom_appbar.dart';
 import 'package:portfolio/features/presentation/widgets/custom_drawer.dart';
+import 'package:portfolio/features/presentation/widgets/floating_button.dart';
 import 'package:portfolio/features/presentation/widgets/gap.dart';
 
 class Home extends StatelessWidget {
@@ -37,6 +39,20 @@ class Home extends StatelessWidget {
               Gap(gap: 30),
               FooterSection(),
             ]),
+          ),
+        ],
+      ),
+      floatingActionButton: Column(
+        mainAxisSize: MainAxisSize.min,
+        spacing: 10,
+        children: [
+          FloatingButton(
+            icon: Icons.keyboard_arrow_up_outlined,
+            onTap: () => ScrollService.scrollToPosition(0),
+          ),
+          FloatingButton(
+            icon: Icons.keyboard_arrow_down_outlined,
+            onTap: () => ScrollService.scrollToPosition(4),
           ),
         ],
       ),
